@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0">
+
+<title>
+Smart Study Tracker
+</title>
+
+<link rel="stylesheet"
+href="../css/dashboard.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app-shell">
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<div class="logo">
+CA<em>Inter</em> · Tracker
+</div>
+
+<div class="nav-tabs">
+
+<button class="nav-tab active"
+onclick="showTab('dashboard')">
+Dashboard
+</button>
+
+<button class="nav-tab"
+onclick="showTab('analytics')">
+Analytics
+</button>
+
+<button class="nav-tab"
+onclick="showTab('planner')">
+Planner
+</button>
+
+<button class="nav-tab"
+onclick="showTab('revisions')">
+Revisions
+</button>
+
+<button class="nav-tab"
+onclick="showTab('focus')">
+Focus
+</button>
+
+</div>
+
+<div class="today-pill">
+
+<div>
+
+<div class="today-label">
+Today
+</div>
+
+<div class="today-val"
+id="today-clock">
+00:00
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<!-- EXAM COUNTDOWN SECTION -->
+<div class="exam-countdown-section">
+  <div class="exam-icon">📋</div>
+  <div class="exam-info">
+    <h3 class="exam-title">EXAM COUNTDOWN</h3>
+    <p class="exam-details" id="exam-details">CA Intermediate · September 1, 2026</p>
+  </div>
+  <div class="countdown-display">
+    <div class="countdown-item">
+      <div class="countdown-value" id="countdown-days">90</div>
+      <div class="countdown-label">DAYS</div>
+    </div>
+    <div class="countdown-item">
+      <div class="countdown-value" id="countdown-hours">10</div>
+      <div class="countdown-label">HOURS</div>
+    </div>
+    <div class="countdown-item">
+      <div class="countdown-value" id="countdown-mins">36</div>
+      <div class="countdown-label">MINS</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS SUMMARY -->
+<div class="stats-summary" id="stats-summary">
+  <div class="stat-pill">
+    <div class="stat-label">ALL-TIME TOTAL</div>
+    <div class="stat-value" id="stat-total-time">00:00</div>
+    <div class="stat-desc">All 6 papers combined</div>
+  </div>
+  <div class="stat-pill">
+    <div class="stat-label">TODAY</div>
+    <div class="stat-value" id="stat-today-time">00:00</div>
+    <div class="stat-desc" id="today-date">2026-06-02</div>
+  </div>
+  <div class="stat-pill">
+    <div class="stat-label">TOPICS</div>
+    <div class="stat-value" id="stat-topics-count">0</div>
+    <div class="stat-desc">Across all papers</div>
+  </div>
+  <div class="stat-pill">
+    <div class="stat-label">DAYS TRACKED</div>
+    <div class="stat-value" id="stat-days-tracked">0</div>
+    <div class="stat-desc">Active study days</div>
+  </div>
+</div>
+
+<!-- PAPERS LIST -->
+<div class="papers-section">
+  <div class="papers-header">
+    <h2>Papers</h2>
+    <button class="btn-add-paper" onclick="openCourseModal()">+ Add Paper</button>
+  </div>
+  <div class="papers-list" id="papers-list">
+  </div>
+</div>
+
+</div>
+
+<!-- COURSE/PAPER MODAL -->
+
+<div class="modal"
+id="courseModal">
+
+<div class="modal-content">
+
+<h2 id="courseModalTitle">
+Add Paper
+</h2>
+
+<input
+type="hidden"
+id="courseId">
+
+<input
+type="text"
+id="courseName"
+placeholder="Paper Name">
+
+<input
+type="number"
+id="courseProgress"
+placeholder="Progress %"
+min="0"
+max="100">
+
+<div class="modal-buttons">
+<button
+onclick="saveCourse()">
+
+Save Paper
+
+</button>
+
+<button class="cancel"
+onclick="closeCourseModal()">
+
+Close
+
+</button>
+</div>
+
+</div>
+
+</div>
+
+<!-- EDIT TOPIC MODAL -->
+<div class="modal" id="editTopicModal">
+<div class="modal-content">
+<h2>Edit Topic</h2>
+
+<input
+type="text"
+id="editTopicName"
+placeholder="Topic Name"
+style="width:100%; padding:12px; margin-bottom:15px; border:1px solid var(--border); border-radius:10px; background:var(--bg3); color:var(--text); font-size:14px;">
+
+<div class="modal-buttons">
+<button onclick="saveEditTopic()">Save Topic</button>
+<button class="cancel" onclick="closeEditTopicModal()">Close</button>
+</div>
+</div>
+</div>
+
+<!-- NOTES MODAL -->
+<div class="modal" id="notesModal">
+<div class="modal-content">
+<h2>Saved Notes</h2>
+<div id="notesModalContent"></div>
+<button class="cancel" onclick="closeNotesModal()">Close</button>
+</div>
+</div>
+
+<script src="../js/dashboard.js">
+</script>
+
+</body>
+</html>

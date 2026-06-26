@@ -1,0 +1,89 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0d1117;
+    color:white;
+}
+
+.home-container{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    padding:60px 20px 40px;
+    gap:30px;
+}
+
+.hero-card{
+    background:#161b22;
+    padding:40px 45px;
+    border-radius:24px;
+    text-align:center;
+    width:min(760px,100%);
+    box-shadow:0 0 30px rgba(0,0,0,0.45);
+}
+
+.hero-card h1{
+    margin-bottom:20px;
+}
+
+.hero-card p{
+    color:#aaa;
+    margin-bottom:30px;
+}
+
+.btn-group{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:12px 30px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    min-width:130px;
+}
+
+.login-btn{
+    background:#2563eb;
+    color:white;
+}
+
+.register-btn{
+    background:#16a34a;
+    color:white;
+}
+.home-features{
+    width:min(760px,100%);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.feature-card{
+    background:#161b22;
+    border-radius:22px;
+    padding:24px 28px;
+    box-shadow:0 0 24px rgba(0,0,0,0.25);
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.feature-card h2{
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.feature-card p{
+    color:#c0c0c0;
+    line-height:1.6;
+}
